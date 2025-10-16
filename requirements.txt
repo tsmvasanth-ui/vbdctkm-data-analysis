@@ -1,6 +1,6 @@
 streamlit
-pandas
 gspread
-google-auth
-matplotlib
+pandas
 plotly
+google-auth
+

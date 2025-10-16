@@ -1,18 +1,19 @@
 import streamlit as st
-import pandas as pd
 import gspread
+import pandas as pd
+import json
+import os
 from google.oauth2.service_account import Credentials
+import plotly.express as px
 
 # ---------------------------
 # 1. Service Account Setup
 # ---------------------------
-SERVICE_ACCOUNT_FILE = "vbdctkm-2c5de101d3c0.JSON"
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+creds_json = os.getenv("GOOGLE_CREDS")
+creds_dict = json.loads(creds_json)
 
-creds = Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE,
-    scopes=SCOPES
-)
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
+creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
 gc = gspread.authorize(creds)
 
 # ---------------------------
