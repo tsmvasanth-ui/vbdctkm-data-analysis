@@ -20,7 +20,7 @@ gc = gspread.authorize(creds)
 # 2. Spreadsheet Setup
 # ---------------------------
 SPREADSHEET_ID = "1efD5IUpzCSGAU1zmSi6uqIzqXNGCyyJyKPLQBIyOulw"  # replace with your sheet ID
-sheet = gc.open_by_key(SPREADSHEET_ID).sheet7
+sheet = gc.open_by_key(SPREADSHEET_ID).sheet1
 
 # ---------------------------
 # 3. Load data into Pandas
